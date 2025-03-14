@@ -11,4 +11,8 @@ public class EventManagerController {
     protected void onHelloButtonClick() {
         welcomeText.setText("Velkomin í Event Manager");
     }
+
+    public void setjaUpp() {
+        System.out.println("Dummy aðferð EventManagerController virkar!");
+    }
 }

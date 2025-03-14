@@ -5,5 +5,5 @@ public enum Flokkur {
 
     SPILAKVOLD(),
 
-    KEILUKVOLD
+    KEILUKVOLD()
 }
