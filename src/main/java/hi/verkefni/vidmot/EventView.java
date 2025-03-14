@@ -10,8 +10,8 @@ import java.io.IOException;
 public class EventView extends AnchorPane {
     private EventModel eventModel;
 
-    @FXML
-    private Text eventNameText;
+    /*@FXML
+    private Text eventNameText;*/
 
     private MediaPlayer mediaPlayer;
 
@@ -27,7 +27,7 @@ public class EventView extends AnchorPane {
         }
     }
 
-    public void initialize() {
+    /*public void initialize() {
         // Binda EventModel properties við viðmótið
         eventNameText.textProperty().bind(eventModel.vidburdurProperty());
 
@@ -45,7 +45,7 @@ public class EventView extends AnchorPane {
                 }
             }
         });
-    }
+    }*/
 
     public void setEventModel(EventModel eventModel) {
         this.eventModel = eventModel;
