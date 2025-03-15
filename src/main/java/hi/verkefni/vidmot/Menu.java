@@ -28,7 +28,7 @@ public class Menu {
     private void handleOpna(ActionEvent event) {
         System.out.println("Opna valið");
         EventManagerController controller = EventManagerApplication.getController();
-        controller.setjaUpp();  // Dummy aðferð testuð
+        controller.setjaUpp();  // Dummy aðferð testuð inní EventManagerController
     }
 
     @FXML

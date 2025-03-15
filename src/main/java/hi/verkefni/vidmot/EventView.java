@@ -33,24 +33,6 @@ public class EventView extends AnchorPane {
     }
 
     public void initialize() {
-        // Binda EventModel properties við viðmótið
-        /*eventNameLabel.textProperty().bind(eventModel.vidburdurProperty());
-
-        // Bæta við listener fyrir media property í EventModel
-        eventModel.kynningarMyndbandProperty().addListener(new ChangeListener<Media>() {
-            @Override
-            public void changed(ObservableValue<? extends Media> observable, Media oldValue, Media newValue) {
-                if (newValue != null) {
-                    // Búa til nýjan MediaPlayer þegar nýtt media er sett
-                    if (mediaPlayer != null) {
-                        mediaPlayer.stop();  // Stoppa gamla MediaPlayer
-                    }
-                    mediaPlayer = new MediaPlayer(newValue);  // Búa til nýjan MediaPlayer
-                    mediaPlayer.play();  // Spila nýja media ef það er ekki null
-                }
-            }
-        });*/
-
         // Athugar hvort eventModel er ekki null og setur upp bindingar
         if (eventModel != null) {
             eventNameLabel.textProperty().bind(eventModel.eventNameProperty());
