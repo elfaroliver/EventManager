@@ -2,6 +2,7 @@ package hi.verkefni.vinnsla;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 
 import javax.print.attribute.standard.Media;
 import java.time.LocalDate;
@@ -41,6 +42,14 @@ public class EventModel {
 
     public SimpleObjectProperty<Media> kynningarMyndbandProperty() {
         return kynningarMyndband;
+    }
+
+    public ObservableValue<String> eventNameProperty() {
+        return eventNameProperty();
+    }
+
+    public ObservableValue<Object> mediaProperty() {
+        return mediaProperty();
     }
 
 
