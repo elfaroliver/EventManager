@@ -17,8 +17,8 @@ public class EventManagerController {
     public MediaView fxMediaView;
     public Slider fxSlVolume;
     private MediaPlayer mediaPlayer;
-    private static final String MEDIA_URL =
-            "https://liveexample.pearsoncmg.com/common/sample.mp4";
+    /*private static final String MEDIA_URL =
+            "https://liveexample.pearsoncmg.com/common/sample.mp4";*/
 
     @FXML
     protected void onHelloButtonClick() {
@@ -30,11 +30,11 @@ public class EventManagerController {
     }
 
     public void initialize() {
-        mediaPlayer = new MediaPlayer(new Media(MEDIA_URL));
+        /*mediaPlayer = new MediaPlayer(new Media(MEDIA_URL));
         mediaPlayer.setAutoPlay(false);
         fxMediaView.setMediaPlayer(mediaPlayer);
         mediaPlayer.volumeProperty().bind(
-                fxSlVolume.valueProperty().divide(100));
+                fxSlVolume.valueProperty().divide(100));*/
     }
 
     public void playPauseAction(ActionEvent actionEvent) {
