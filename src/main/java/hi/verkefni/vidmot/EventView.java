@@ -21,19 +21,19 @@ public class EventView extends AnchorPane {
     private MediaPlayer mediaPlayer;
 
     public EventView() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("event-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/hi/verkefni/vidmot/event-view.fxml"));
         loader.setRoot(this);
         loader.setController(this);
 
         try {
             loader.load();
         } catch (IOException e) {
+            e.printStackTrace();
             throw new RuntimeException("Gat ekki hlaðið event-view.fxml", e);
         }
     }
 
     public void initialize() {
-        // Athugar hvort eventModel er ekki null og setur upp bindingar
         if (eventModel != null) {
             eventNameLabel.textProperty().bind(eventModel.eventNameProperty());
 

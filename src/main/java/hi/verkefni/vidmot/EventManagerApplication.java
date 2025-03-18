@@ -24,20 +24,12 @@ public class EventManagerApplication extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("eventmanager-view.fxml"));
         Parent root = loader.load();
-        controller = loader.getController();  // Hér vistum við controllerinn
+        controller = loader.getController();  // Controller vistaður
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    /*@Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(EventManagerApplication.class.getResource("eventManager-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }*/
 
     public static void main(String[] args) {
         launch();
