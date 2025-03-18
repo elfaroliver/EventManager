@@ -10,6 +10,7 @@ import java.time.LocalTime;
 
 public class EventModel {
     //private Flokkur flokkur;
+    private SimpleStringProperty name = new SimpleStringProperty();
     private SimpleStringProperty vidburdur = new SimpleStringProperty();
     private SimpleObjectProperty<Flokkur> flokkur = new SimpleObjectProperty<>();
     private SimpleObjectProperty<LocalDate> dagsetning = new SimpleObjectProperty<>(LocalDate.now());
@@ -50,6 +51,18 @@ public class EventModel {
 
     public ObservableValue<Object> mediaProperty() {
         return mediaProperty();
+    }
+
+    public SimpleStringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getName() {
+        return name.get();
     }
 
 

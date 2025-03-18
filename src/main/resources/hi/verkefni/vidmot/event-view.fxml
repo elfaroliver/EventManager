@@ -1,40 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <VBox prefHeight="400.0" prefWidth="600.0">
       <children>
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <HBox prefHeight="16.0" prefWidth="530.0">
             <children>
-               <Label text="Heiti" />
-               <Label text="Label" />
+               <Label text="Heiti">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding></Label>
+               <TextField />
             </children>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
          </HBox>
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <HBox prefHeight="0.0" prefWidth="555.0">
             <children>
-               <Label text="Flokkur" />
+               <Label text="Flokkur">
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding>
+               </Label>
                <ComboBox prefWidth="150.0" />
             </children>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
          </HBox>
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <HBox prefHeight="0.0" prefWidth="551.0">
             <children>
-               <Label text="Dagsetning" />
+               <Label text="Dagsetning">
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding></Label>
                <DatePicker />
             </children>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
          </HBox>
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <HBox prefHeight="0.0" prefWidth="466.0">
             <children>
-               <Label text="Tími" />
+               <Label text="Tími">
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding></Label>
                <Spinner />
             </children>
+            <padding>
+               <Insets bottom="100.0" top="10.0" />
+            </padding>
          </HBox>
       </children>
    </VBox>

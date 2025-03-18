@@ -17,6 +17,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.util.Duration;
+import javafx.scene.control.TextInputDialog;
 
 import java.io.IOException;
 
@@ -77,6 +78,54 @@ public class EventManagerController {
         }
         targetView.setVisible(true); // Sýna targetView fremstan
         targetView.setFocusTraversable(true);
+    }
+
+    public void opna() {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Opna viðburð");
+        dialog.setHeaderText("Sláðu inn heiti viðburðar:");
+
+        dialog.showAndWait().ifPresent(eventName -> {
+            EventModel foundEvent = null;
+            for (EventModel event : list) {
+                if (event.getName().equals(eventName)) {
+                    foundEvent = event;
+                    break;
+                }
+            }
+
+            if (foundEvent != null) {
+                EventView existingEventView = findEventView(foundEvent);
+
+                if (existingEventView != null) {
+                    currentView = existingEventView;
+                    System.out.println("Viðburður fundinn");
+                } else {
+                    EventView newEventView = new EventView();
+                    newEventView.setEventModel(foundEvent);
+                    currentView = newEventView;
+
+                    fxEventViews.getChildren().add(currentView);
+                    System.out.println("Nýr viðburður búinn");
+                }
+                fxEventViews.getChildren().forEach(child -> child.setVisible(false));
+                currentView.setVisible(true);
+            } else {
+                System.out.println("Enginn viðburður með þessu heiti fannst");
+            }
+        });
+    }
+
+    private EventView findEventView(EventModel eventModel) {
+        for (Node node : fxEventViews.getChildren()) {
+            if (node instanceof EventView) {
+                EventView eventView = (EventView) node;
+                if (eventView.getEventModel().equals(eventModel)) {
+                    return eventView;
+                }
+            }
+        }
+        return null;
     }
 
     public void playPauseAction(ActionEvent actionEvent) {
