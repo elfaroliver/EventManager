@@ -17,7 +17,17 @@ public class EventModel {
     private SimpleObjectProperty<LocalTime> timi = new SimpleObjectProperty<>(LocalTime.now());
     private final SimpleObjectProperty<Media> kynningarMyndband = new SimpleObjectProperty<Media>();
 
-    public EventModel(String vidburdur, Flokkur flokkur, LocalDate dagsetning, LocalTime timi, Media kynningarMyndband) {
+    /**
+     * Smiður, that's it. Veit ekki hvort hann virki þar sem ég náði ekki að kalla í dialog
+     * @param vidburdur
+     * @param flokkur
+     * @param dagsetning
+     * @param timi
+     * @param kynningarMyndband
+     * @param name
+     */
+    public EventModel(String vidburdur, Flokkur flokkur, LocalDate dagsetning, LocalTime timi, Media kynningarMyndband, String name) {
+        this.name.set(name);
         this.vidburdur.set(vidburdur);
         this.flokkur.set(flokkur);
         this.dagsetning.set(dagsetning);

@@ -15,16 +15,15 @@
        <fx:include source="menu-view.fxml"/>
    </top>
     <center>
-      <StackPane fx:id="eventContainer" prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <StackPane fx:id="fxEventViews" prefHeight="300.0" prefWidth="500.0" BorderPane.alignment="CENTER">
         <fx:include source="event-view.fxml"/>
+          <Button text="Play/Pause" onAction="#playPauseAction"/>
+          <Button text="Press to rewind" onAction="#rewindAction"/>
+          <Label text="Volume"/>
+          <Slider fx:id="fxSlVolume" prefWidth="150" maxWidth="30" value="50"/>
       </StackPane>
     </center>
     <bottom>
-        <HBox spacing ="10" alignment="CENTER">
-            <Button text="Play/Pause" onAction="#playPauseAction"/>
-            <Button text="Press to rewind" onAction="#rewindAction"/>
-            <Label text="Volume"/>
-            <Slider fx:id="fxSlVolume" prefWidth="150" maxWidth="30" value="50"/>
-        </HBox>
+        <HBox spacing ="10" alignment="CENTER"> </HBox>
     </bottom>
 </BorderPane>
