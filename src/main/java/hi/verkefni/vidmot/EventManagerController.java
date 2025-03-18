@@ -1,5 +1,8 @@
 package hi.verkefni.vidmot;
 
+import hi.verkefni.vinnsla.EventModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -20,9 +24,13 @@ public class EventManagerController {
     private Label welcomeText;
     @FXML
     private BorderPane borderPane;
-    public MediaView fxMediaView;
+    @FXML
+    private StackPane eventContainer;
+    //public MediaView fxMediaView;
     public Slider fxSlVolume;
     private MediaPlayer mediaPlayer;
+    EventView currentView;
+    private ObservableList<EventModel> list = FXCollections.observableArrayList();
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Velkomin í Event Manager");
@@ -44,7 +52,6 @@ public class EventManagerController {
         //borderPane.setCenter(eventView);
         System.out.println("EventView sett í BorderPane");
     }
-
 
     public void playPauseAction(ActionEvent actionEvent) {
         Button playButton = (Button) actionEvent.getSource();
