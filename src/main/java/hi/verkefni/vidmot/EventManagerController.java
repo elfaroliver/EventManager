@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -25,7 +26,7 @@ public class EventManagerController {
     @FXML
     private BorderPane borderPane;
     @FXML
-    private StackPane eventContainer;
+    private StackPane fxEventViews;
     //public MediaView fxMediaView;
     public Slider fxSlVolume;
     private MediaPlayer mediaPlayer;
@@ -48,9 +49,34 @@ public class EventManagerController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //EventView eventView = new EventView(); // Býr til nýtt instance af EventView(sem er ekki að virka)
-        //borderPane.setCenter(eventView);
         System.out.println("EventView sett í BorderPane");
+    }
+
+    public void nyr() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("event-view.fxml"));
+            currentView = loader.load();
+            fxEventViews.getChildren().add(currentView);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void vista() {
+        if (currentView != null && currentView.getEventModel() != null) {
+            list.add(currentView.getEventModel());
+            System.out.println("Viðburður vistaður í minnið.");
+        } else {
+            System.out.println("Enginn viðburður til að vista.");
+        }
+    }
+
+    private void switchView(EventView targetView) {
+        for (Node node : fxEventViews.getChildren()) {
+            node.setVisible(false); // Fela alla viðburðina
+        }
+        targetView.setVisible(true); // Sýna targetView fremstan
+        targetView.setFocusTraversable(true);
     }
 
     public void playPauseAction(ActionEvent actionEvent) {
